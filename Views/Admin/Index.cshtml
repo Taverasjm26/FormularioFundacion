@@ -1,0 +1,21 @@
+﻿@model string[]
+
+<h2>Panel del Gregory</h2>
+
+@if (!Model.Any())
+{
+    <p>No hay comprobantes todavía.</p>
+}
+else
+{
+    <ul>
+        @foreach (var f in Model)
+        {
+            <li>
+                <a href="/Admin/Descargar?file=@f" target="_blank">
+                    Descargar @f
+                </a>
+            </li>
+        }
+    </ul>
+}
